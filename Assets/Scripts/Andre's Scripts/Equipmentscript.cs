@@ -37,7 +37,7 @@ public class Equipmentscript : MonoBehaviour
                 Transform targetTrans = null;
                 EquipGegenstand currentEquip = null;
 
-                switch (newItem.targetSlot){
+                switch (newItem.targetSlot.Equip){
                     case Equipment.Cowboyhat:
                         targetTrans = headSlot;
                         currentEquip = headEquipt;
