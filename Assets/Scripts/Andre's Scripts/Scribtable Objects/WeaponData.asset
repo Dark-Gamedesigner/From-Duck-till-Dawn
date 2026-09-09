@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 738508e148254654a86d22e763655a96, type: 3}
+  m_Name: WeaponData
+  m_EditorClassIdentifier: Assembly-CSharp::WeaponData
+  Type: 0
+  maxAmmo: 6
+  demage: 1
+  fireRate: 0.5
+  reload: 0.5
+  weaponRange: 20
+  headShot: 1.5
+  hitEffect: {fileID: 2353035257055422714, guid: 50c954045571fd544a5caa2208c6e097, type: 3}
+  WeaponPrefab: {fileID: 8493364319949757463, guid: d50f463a2df8b1440b25512251fc8722, type: 3}
