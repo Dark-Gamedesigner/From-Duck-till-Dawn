@@ -50,7 +50,10 @@ public class WeaponController : MonoBehaviour
             case WeaponType.Patrone:
                 if (Physics.Raycast(transform.position, transform.forward, out hit, weaponData.weaponRange)){
                     HitTarget(hit);
-                    zielscheibeScript[0].Hited(1);
+                    var zielScheibe = hit.collider.GetComponent<ZielscheibeScript>();
+                    if (zielScheibe){
+                        zielScheibe.Hited(1);
+                    }
                 } 
                 break;
         }
@@ -79,6 +82,4 @@ public class WeaponController : MonoBehaviour
         reloading = false;
         countAmmo = weaponData.maxAmmo;
     }
-
-    
 }

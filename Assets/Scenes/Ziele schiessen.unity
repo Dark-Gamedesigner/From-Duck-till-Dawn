@@ -242,9 +242,8 @@ GameObject:
   - component: {fileID: 166991390}
   - component: {fileID: 166991393}
   - component: {fileID: 166991392}
-  - component: {fileID: 166991391}
   m_Layer: 0
-  m_Name: Cube (3)
+  m_Name: WandLinks
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -265,27 +264,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 846410245}
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
---- !u!65 &166991391
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 166991389}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &166991392
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -568,35 +546,13 @@ GameObject:
   - component: {fileID: 391337670}
   - component: {fileID: 391337669}
   - component: {fileID: 391337668}
-  - component: {fileID: 391337667}
   m_Layer: 0
-  m_Name: Cube (1)
+  m_Name: Boden
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!65 &391337667
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 391337666}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &391337668
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -857,35 +813,13 @@ GameObject:
   - component: {fileID: 617428481}
   - component: {fileID: 617428480}
   - component: {fileID: 617428479}
-  - component: {fileID: 617428478}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: WandHinten
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!65 &617428478
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 617428477}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &617428479
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1385,9 +1319,8 @@ GameObject:
   - component: {fileID: 846549479}
   - component: {fileID: 846549482}
   - component: {fileID: 846549481}
-  - component: {fileID: 846549480}
   m_Layer: 0
-  m_Name: Cube (4)
+  m_Name: WandRechts
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1408,27 +1341,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 846410245}
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
---- !u!65 &846549480
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 846549478}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &846549481
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2953,7 +2865,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2438158229268775480, guid: d50f463a2df8b1440b25512251fc8722, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.25
+      value: 0.75
       objectReference: {fileID: 0}
     - target: {fileID: 2438158229268775480, guid: d50f463a2df8b1440b25512251fc8722, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2961,7 +2873,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2438158229268775480, guid: d50f463a2df8b1440b25512251fc8722, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2438158229268775480, guid: d50f463a2df8b1440b25512251fc8722, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2991,6 +2903,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8493364319949757463, guid: d50f463a2df8b1440b25512251fc8722, type: 3}
+      propertyPath: zielscheibeScript.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8493364319949757463, guid: d50f463a2df8b1440b25512251fc8722, type: 3}
+      propertyPath: 'zielscheibeScript.Array.data[0]'
+      value: 
+      objectReference: {fileID: 814513815}
+    - target: {fileID: 8493364319949757463, guid: d50f463a2df8b1440b25512251fc8722, type: 3}
+      propertyPath: 'zielscheibeScript.Array.data[1]'
+      value: 
+      objectReference: {fileID: 1333535122}
+    - target: {fileID: 8493364319949757463, guid: d50f463a2df8b1440b25512251fc8722, type: 3}
+      propertyPath: 'zielscheibeScript.Array.data[2]'
+      value: 
+      objectReference: {fileID: 880404314}
+    - target: {fileID: 8493364319949757463, guid: d50f463a2df8b1440b25512251fc8722, type: 3}
+      propertyPath: 'zielscheibeScript.Array.data[3]'
+      value: 
+      objectReference: {fileID: 1683790676}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

@@ -2,12 +2,17 @@ using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UIElements;
+using Cursor = UnityEngine.Cursor;
 
 public class PlayerController02 : MonoBehaviour
 {
     public Camera cam;
     public float sensatibility;
     private float xRotation;
+
+    private void Start(){
+        Cursor.lockState = CursorLockMode.Locked;
+    }
 
     private void Update(){
         Vector2 mousePos = Mouse.current.delta.ReadValue();

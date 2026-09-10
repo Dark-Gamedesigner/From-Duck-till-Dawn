@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
+
 public class ZielscheibeScript : MonoBehaviour
 {
     private float speed = 1.5f;
@@ -8,6 +9,9 @@ public class ZielscheibeScript : MonoBehaviour
     private float start;
 
     private int _currentHitPoints = 1;
+
+    
+    
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start(){
         start = transform.position.z;
@@ -22,6 +26,8 @@ public class ZielscheibeScript : MonoBehaviour
     public void Hited(int incomingHit){
         int wouldBeHit = _currentHitPoints - incomingHit;
         Destroy(gameObject);
-        MoneySpawner.GetMoney.Invoke(1);
+        if (Random.value < 0.7f){
+            MoneySpawner.GetMoney.Invoke(1);
+        } 
     }
 }

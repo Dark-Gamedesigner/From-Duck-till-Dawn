@@ -9,7 +9,7 @@ public class WeaponData : ScriptableObject
     public int demage = 1;
     public float fireRate = 0.5f;
     public float reload = 0.5f;
-    public float weaponRange = 20f;
+    public float weaponRange = 40f;
     public float headShot = 1.5f;
 
     [Header("Raycast")] 
