@@ -9,8 +9,18 @@ using UnityEngine;
 public class ShootingInput : MonoBehaviour
 {
     [Header("Referenzen")]
-    [Tooltip("Die First-Person-Kamera, aus der geschossen wird")]
+    [Tooltip("Die Kamera, aus der geschossen wird. Falls leer gelassen, wird automatisch die Kamera auf diesem GameObject verwendet")]
     [SerializeField] private Transform cameraTransform;
+
+    private void Awake()
+    {
+        // In Minispiel-Szenen sitzt dieses Script direkt auf der Kamera zusammen
+        // mit MinigameLook.cs - dann reicht die eigene Transform als Ursprung.
+        if (cameraTransform == null)
+        {
+            cameraTransform = transform;
+        }
+    }
 
     [Header("Einstellungen")]
     [Tooltip("Maximale Schussreichweite")]
