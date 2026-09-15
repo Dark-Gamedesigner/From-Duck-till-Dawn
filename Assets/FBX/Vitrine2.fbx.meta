@@ -1,9 +1,19 @@
 fileFormatVersion: 2
-guid: c84349cecdba79244baee271cd329c24
+guid: 0259979c82e637a4ba51d2e83dce59be
 ModelImporter:
   serializedVersion: 24200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Vitrine
+    second: {fileID: 2100000, guid: 7798ece574532b744a8bc0603339cfac, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Vitrine_Rueckwand
+    second: {fileID: 2100000, guid: 388deb2f9961d6241a40f54f421db60e, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
