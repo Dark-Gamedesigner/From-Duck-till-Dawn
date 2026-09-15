@@ -32,12 +32,13 @@ public class MoneySpawner : MonoBehaviour
     void Update()
     {
         if (Keyboard.current.qKey.wasPressedThisFrame){
-            looseMoney.Invoke(1);
+            GetMoney.Invoke(1);
         }
     }
 
     private void ToGetMoney(int amount){
         startMoney += amount;
+        ChangeMoney.Invoke(startMoney);
         //looseMoney.Invoke(startMoney);
     }
 

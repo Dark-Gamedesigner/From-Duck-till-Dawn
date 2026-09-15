@@ -33,8 +33,11 @@ public class ZielscheibeScript : MonoBehaviour
     public void Hited(int incomingHit = 1 ){
         int wouldBeHit = _currentHitPoints - incomingHit;
         Destroy(gameObject);
-        if (Random.value < 0.7f){
+        float roll = Random.value;
+        Debug.Log(roll);
+        if (roll < 0.7f){
             MoneySpawner.GetMoney.Invoke(1);
+            //Debug.Log(MoneySpawner.GetMoney);
         }
         targets--;
         TargetHit.Invoke();

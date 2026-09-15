@@ -49,12 +49,14 @@ public class WeaponController : MonoBehaviour
         switch (weaponData.Type){
             case WeaponType.Patrone:
                 if (Physics.Raycast(transform.position, transform.forward, out hit, weaponData.weaponRange)){
+                    //Debug.DrawLine(transform.position,hit.point, Color.blue, 1);
                     HitTarget(hit);
                     var zielScheibe = hit.collider.GetComponent<ZielscheibeScript>();
                     if (zielScheibe){
                         zielScheibe.Hited(1);
                     }
                 } 
+                //Debug.DrawLine(transform.position, transform.position + transform.forward * 100, Color.red, 1);
                 break;
         }
     }
