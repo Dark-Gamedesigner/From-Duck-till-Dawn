@@ -16,6 +16,7 @@ public class MoneySpawner : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        DontDestroyOnLoad(this);
         if (Instance == null){
             Instance = this;
         }
@@ -37,7 +38,7 @@ public class MoneySpawner : MonoBehaviour
 
     private void ToGetMoney(int amount){
         startMoney += amount;
-        looseMoney.Invoke(startMoney);
+        //looseMoney.Invoke(startMoney);
     }
 
     private void ToLooseMoney(int amount){

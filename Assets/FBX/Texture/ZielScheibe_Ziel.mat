@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-1055852999028425212
+--- !u!114 &-4605307478458551323
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Ablage
+  m_Name: ZielScheibe_Ziel
   m_Shader: {fileID: 4800000, guid: 933532a4fcc9baf4fa0491de14d08ed7, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -41,11 +41,11 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _BaseMap:
-        m_Texture: {fileID: 2800000, guid: 71cfcd3ff4f451a4fa011eaeb7f0de51, type: 3}
+        m_Texture: {fileID: 2800000, guid: cc875bc6a0bcbd541b89e2a3ee42fff0, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BumpMap:
-        m_Texture: {fileID: 2800000, guid: 5acb3ac61b77e2b43b12830b42145d6b, type: 3}
+        m_Texture: {fileID: 2800000, guid: 3b767b09d04c04142931725db6ffee32, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DetailAlbedoMap:
@@ -65,11 +65,11 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 71cfcd3ff4f451a4fa011eaeb7f0de51, type: 3}
+        m_Texture: {fileID: 2800000, guid: cc875bc6a0bcbd541b89e2a3ee42fff0, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
-        m_Texture: {fileID: 2800000, guid: 481d8c4efb97e004488fa73907ba27f7, type: 3}
+        m_Texture: {fileID: 2800000, guid: 7ea9925baff36cb49996743f182b2543, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _OcclusionMap:

@@ -1,5 +1,7 @@
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 
 public class ZielscheibeScript : MonoBehaviour
@@ -9,6 +11,11 @@ public class ZielscheibeScript : MonoBehaviour
     private float start;
 
     private int _currentHitPoints = 1;
+
+    public static int targets = 12;
+    public static UnityEvent TargetHit = new();
+
+    private static UnityEvent GameWinned = new();
 
     
     
@@ -23,11 +30,16 @@ public class ZielscheibeScript : MonoBehaviour
         transform.position = new Vector3(transform.position.x, transform.position.y, newPosZ);
     }
 
-    public void Hited(int incomingHit){
+    public void Hited(int incomingHit = 1 ){
         int wouldBeHit = _currentHitPoints - incomingHit;
         Destroy(gameObject);
         if (Random.value < 0.7f){
             MoneySpawner.GetMoney.Invoke(1);
-        } 
+        }
+        targets--;
+        TargetHit.Invoke();
+        
     }
+
+    
 }
