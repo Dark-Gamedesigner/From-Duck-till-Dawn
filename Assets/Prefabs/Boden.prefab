@@ -8,6 +8,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -8863008729729215151, guid: 42cb2389eaf0d8c4cb79a44c992558ce, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 42cb2389eaf0d8c4cb79a44c992558ce, type: 3}
       propertyPath: m_LocalPosition.x
       value: -15
@@ -52,9 +56,25 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 1bb31a4bc43090644bbd8142d4978ec7, type: 2}
+    - target: {fileID: -5260529763218161369, guid: 42cb2389eaf0d8c4cb79a44c992558ce, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: -2401824097931760167, guid: 42cb2389eaf0d8c4cb79a44c992558ce, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 1bb31a4bc43090644bbd8142d4978ec7, type: 2}
     - target: {fileID: 919132149155446097, guid: 42cb2389eaf0d8c4cb79a44c992558ce, type: 3}
       propertyPath: m_Name
       value: Boden
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 42cb2389eaf0d8c4cb79a44c992558ce, type: 3}
+      propertyPath: m_TagString
+      value: Walkable
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 42cb2389eaf0d8c4cb79a44c992558ce, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -62,14 +82,14 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 42cb2389eaf0d8c4cb79a44c992558ce, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 3002709602590994631}
+      addedObject: {fileID: 2983848944400776048}
   m_SourcePrefab: {fileID: 100100000, guid: 42cb2389eaf0d8c4cb79a44c992558ce, type: 3}
 --- !u!1 &215524610428603077 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 42cb2389eaf0d8c4cb79a44c992558ce, type: 3}
   m_PrefabInstance: {fileID: 1025936347468052372}
   m_PrefabAsset: {fileID: 0}
---- !u!65 &3002709602590994631
+--- !u!65 &2983848944400776048
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -88,5 +108,5 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 10, y: 1, z: 8}
+  m_Center: {x: 0, y: 0, z: 0.75}

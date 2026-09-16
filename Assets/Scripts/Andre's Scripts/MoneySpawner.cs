@@ -8,9 +8,10 @@ public class MoneySpawner : MonoBehaviour
     public static UnityEvent<int> looseMoney = new();
     public static UnityEvent<int> ChangeMoney = new();
 
-    public static MoneySpawner Instance{ private set; get; } = null;
+    public static MoneySpawner Instance{ private set; get; }
 
     public int startMoney{ private set; get; } = 1;
+    public int releasemoney{ private set; get; }
     
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -42,7 +43,7 @@ public class MoneySpawner : MonoBehaviour
         //looseMoney.Invoke(startMoney);
     }
 
-    private void ToLooseMoney(int amount){
+    public void ToLooseMoney(int amount){
         startMoney -= amount;
         ChangeMoney.Invoke(startMoney);
     }
