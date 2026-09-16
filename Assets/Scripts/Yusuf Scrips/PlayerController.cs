@@ -72,28 +72,33 @@ public class PlayerController : MonoBehaviour
 
     /// <summary>
     /// Zusaetzliche Absicherung gegen "Tunneling": Der eingebaute CharacterController
-    /// kann bei hoher Fallgeschwindigkeit durch duenne Box Collider hindurchrutschen,
-    /// weil er die Kollision nur zwischen den einzelnen Bewegungsschritten prueft.
-    /// Hier wird zusaetzlich per Raycast nach unten geprueft, ob unter dem Spieler
-    /// Boden ist - falls er tiefer steht als der erkannte Boden, wird er wieder
-    /// daraufgesetzt und die Fallgeschwindigkeit zurueckgesetzt.
+    /// kann bei hoher Fallgeschwindigkeit durch duenne oder normalenverkehrte Mesh
+    /// Collider hindurchrutschen. Hier wird zusaetzlich per Raycast geprueft, ob die
+    /// UNTERKANTE der Spieler-Kapsel im Boden steckt - falls ja, wird der Spieler
+    /// exakt auf die Bodenoberflaeche gesetzt.
+    ///
+    /// Wichtig: transform.position ist NICHT automatisch die Fussposition, sondern
+    /// haengt vom "Center" des CharacterControllers ab. Bei Center = (0,0,0) (Unity-
+    /// Standard) liegt transform.position in der MITTE der Kapsel - die Fussposition
+    /// muss deshalb explizit aus Center und Height berechnet werden.
     /// </summary>
     private void PreventFallingThroughGround()
     {
-        // Startpunkt etwas oberhalb der Fuesse, damit der Ray nicht direkt im
-        // Collider des Spielers selbst startet.
-        Vector3 rayOrigin = transform.position + Vector3.up * 0.1f;
+        // Unterkante der Kapsel in Weltkoordinaten (haengt von Center.y und Height ab)
+        float capsuleBottomY = transform.position.y + controller.center.y - (controller.height / 2f);
 
-        if (Physics.Raycast(rayOrigin, Vector3.down, out RaycastHit hit, controller.height / 2f + groundCheckDistance, groundLayer))
+        Vector3 rayOrigin = new Vector3(transform.position.x, capsuleBottomY + 0.1f, transform.position.z);
+
+        if (Physics.Raycast(rayOrigin, Vector3.down, out RaycastHit hit, 0.1f + groundCheckDistance, groundLayer))
         {
-            float distanceToGround = transform.position.y - hit.point.y;
+            float penetration = hit.point.y - capsuleBottomY;
 
-            // Wenn der Spieler unterhalb der eigentlichen Standflaeche "steckt"
-            // (durchgefallen), wird er zurueck auf die Oberflaeche gesetzt.
-            if (distanceToGround < 0f)
+            // Positive Penetration = die Kapsel-Unterkante steckt unterhalb der
+            // erkannten Bodenoberflaeche -> Spieler wieder hochsetzen.
+            if (penetration > 0f)
             {
                 Vector3 correctedPosition = transform.position;
-                correctedPosition.y = hit.point.y;
+                correctedPosition.y += penetration;
                 transform.position = correctedPosition;
                 velocity.y = 0f;
             }
