@@ -7,8 +7,8 @@ using Button = UnityEngine.UI.Button;
 public class ReleaseMinigame : MonoBehaviour
 {
     //public Button startMinigame;
+    public int price;
 
-    private MoneySpawner payMoney;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -33,8 +33,8 @@ public class ReleaseMinigame : MonoBehaviour
     public void OnClickButton(string value){
         //if (MoneySpawner.Instance.releasemoney < MoneySpawner.Instance.startMoney) return;
         
-        if (MoneySpawner.Instance.releasemoney >= MoneySpawner.Instance.startMoney){
-            payMoney.ToLooseMoney(1);
+        if (price <= MoneySpawner.Instance.startMoney){
+            MoneySpawner.Instance.ToLooseMoney(price);
             SceneManager.LoadScene(value);
         }
         else{

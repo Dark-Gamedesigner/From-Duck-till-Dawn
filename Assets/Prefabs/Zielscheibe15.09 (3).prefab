@@ -96,7 +96,7 @@ PrefabInstance:
       addedObject: {fileID: 1986537908074913099}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 175a88a666307714cb3e293233a7e9fd, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 7042240780756001517}
+      addedObject: {fileID: 1964516025393194822}
   m_SourcePrefab: {fileID: 100100000, guid: 175a88a666307714cb3e293233a7e9fd, type: 3}
 --- !u!1 &5932339842187184767 stripped
 GameObject:
@@ -136,7 +136,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 413d535e39151a04384cb282892c1456, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ZielscheibeScript
---- !u!114 &7042240780756001517
+--- !u!114 &1964516025393194822
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
