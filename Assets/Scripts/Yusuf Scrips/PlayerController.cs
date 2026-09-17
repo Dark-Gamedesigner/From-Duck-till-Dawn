@@ -70,18 +70,7 @@ public class PlayerController : MonoBehaviour
         controller.Move(velocity * Time.deltaTime);
     }
 
-    /// <summary>
-    /// Zusaetzliche Absicherung gegen "Tunneling": Der eingebaute CharacterController
-    /// kann bei hoher Fallgeschwindigkeit durch duenne oder normalenverkehrte Mesh
-    /// Collider hindurchrutschen. Hier wird zusaetzlich per Raycast geprueft, ob die
-    /// UNTERKANTE der Spieler-Kapsel im Boden steckt - falls ja, wird der Spieler
-    /// exakt auf die Bodenoberflaeche gesetzt.
-    ///
-    /// Wichtig: transform.position ist NICHT automatisch die Fussposition, sondern
-    /// haengt vom "Center" des CharacterControllers ab. Bei Center = (0,0,0) (Unity-
-    /// Standard) liegt transform.position in der MITTE der Kapsel - die Fussposition
-    /// muss deshalb explizit aus Center und Height berechnet werden.
-    /// </summary>
+   
     private void PreventFallingThroughGround()
     {
         // Unterkante der Kapsel in Weltkoordinaten (haengt von Center.y und Height ab)

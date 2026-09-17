@@ -1,10 +1,5 @@
 using UnityEngine;
 
-/// <summary>
-/// Kommt NUR auf die Kamera innerhalb einer Minispiel-Szene (z.B. Flaschenabschiessen).
-/// Erlaubt dem Spieler, sich per Maus umzuschauen, OHNE sich bewegen zu koennen -
-/// es gibt bewusst keine WASD-Logik hier, anders als beim normalen PlayerController.
-/// </summary>
 public class MinigameLook : MonoBehaviour
 {
     [Header("Maussteuerung")]

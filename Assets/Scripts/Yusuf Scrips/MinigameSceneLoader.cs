@@ -2,15 +2,6 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Events;
 
-/// <summary>
-/// Persistenter, zentraler Loader fuer alle Minispiel-Szenen.
-/// Gehoert in die Bootstrap-Szene (die als erstes geladen wird) und
-/// ueberlebt Szenenwechsel per DontDestroyOnLoad.
-///
-/// Jede Station im Saloon ruft LoadMinigame(sceneName) auf, statt eine
-/// direkte Referenz auf das Minispiel-Objekt zu brauchen - dadurch
-/// funktioniert das System fuer beliebig viele Minispiel-Szenen gleich.
-/// </summary>
 public class MinigameSceneLoader : MonoBehaviour
 {
     public static MinigameSceneLoader Instance { get; private set; }

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 5a8e041912b5f7f44bb50b3bdea54dd1
+guid: cbe35ce01762c274f999dcb2367b6b17
 ModelImporter:
   serializedVersion: 24200
   internalIDToNameTable: []
@@ -7,10 +7,20 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: No Name
-    second: {fileID: 2100000, guid: 8dcf29de7fc6e664eb52989440ded69c, type: 2}
+      name: HolzAussen
+    second: {fileID: 2100000, guid: a860f48c7f7fb5944b1c9bfea38057dc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MetallRing
+    second: {fileID: 2100000, guid: cd84f786b92bf494f8a7e62ea45a65cc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Wasser
+    second: {fileID: 2100000, guid: 99511c65a28153044b0410ad345d1eca, type: 2}
   materials:
-    materialImportMode: 1
+    materialImportMode: 2
     materialName: 0
     materialSearch: 1
     materialLocation: 1
