@@ -1,14 +1,9 @@
 fileFormatVersion: 2
-guid: 42cb2389eaf0d8c4cb79a44c992558ce
+guid: 5a8e041912b5f7f44bb50b3bdea54dd1
 ModelImporter:
   serializedVersion: 24200
   internalIDToNameTable: []
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Boden
-    second: {fileID: 2100000, guid: 4d23e9935ccdb8e4f9606f19e999ad1c, type: 2}
+  externalObjects: {}
   materials:
     materialImportMode: 2
     materialName: 0

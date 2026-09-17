@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 42cb2389eaf0d8c4cb79a44c992558ce
+guid: 37cd66a50d2aa6449a61d50ec397952d
 ModelImporter:
   serializedVersion: 24200
   internalIDToNameTable: []
@@ -7,8 +7,13 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Boden
-    second: {fileID: 2100000, guid: 4d23e9935ccdb8e4f9606f19e999ad1c, type: 2}
+      name: Bein
+    second: {fileID: 2100000, guid: 7c611b6b32e85714aabdb6cb072a6608, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Platte
+    second: {fileID: 2100000, guid: c926d78b38b8a9d498f26aa73ddbd5fa, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

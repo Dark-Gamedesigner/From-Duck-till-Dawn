@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 42cb2389eaf0d8c4cb79a44c992558ce
+guid: 40c5890d51bcd884e8c0370925da872a
 ModelImporter:
   serializedVersion: 24200
   internalIDToNameTable: []
@@ -7,8 +7,13 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Boden
-    second: {fileID: 2100000, guid: 4d23e9935ccdb8e4f9606f19e999ad1c, type: 2}
+      name: Material.002
+    second: {fileID: 2100000, guid: c4a40fee5a3feff4c936f090a8a97f1f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: stuhl2
+    second: {fileID: 2100000, guid: 0863aa2447b437b4480c268e7b9a72fa, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
