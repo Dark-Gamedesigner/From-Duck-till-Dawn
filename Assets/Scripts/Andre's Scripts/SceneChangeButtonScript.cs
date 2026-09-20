@@ -1,33 +1,34 @@
 using System;
 using UnityEngine;
-using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
 public class SceneChangeButtonScript : MonoBehaviour
 {
-    private float distance = 40f;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
+    private float _distance = 40f;
+   
+    // Update, wenn E Taste gedrueckt wird der Knopf mittels Raycast gedrueckt
     void Update()
     {
-        if (Keyboard.current.eKey.wasPressedThisFrame){
+        if (Input.GetKeyDown(KeyCode.E)){
             ButtonRayCast();
         }
     }
-
+    
+    // Methode fuer den Raycast sodass er den Knopf erreicht
     private void ButtonRayCast(){
         bool hasHit = Physics.Raycast(transform.position, transform.forward, out RaycastHit hit,
-            distance + Single.Epsilon, LayerMask.GetMask("releaseButton"));
-        Debug.DrawLine(transform.position,hit.point, Color.red, 2);
+            _distance + Single.Epsilon, LayerMask.GetMask("releaseButton"));
+        //Debug.DrawLine(transform.position,hit.point, Color.red, 2);
+        
+        // wenn der Raycast etwas getroffen hat mit der Komponente Button ...
         if (hasHit){
-            var ButtonComponent = hit.collider.GetComponent<Button>();
-            if (ButtonComponent == null) return;
-            ButtonComponent.onClick.Invoke();
+            var buttonComponent = hit.collider.GetComponent<Button>();
+            
+            // sie null ist passiert nichts
+            if (buttonComponent == null) return;
+            
+            // ... wird die onclick aufgerufen 
+            buttonComponent.onClick.Invoke();
         }
     }
 }

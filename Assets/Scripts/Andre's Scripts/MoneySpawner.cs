@@ -1,21 +1,18 @@
 using UnityEngine;
 using UnityEngine.Events;
-using UnityEngine.InputSystem;
 
 public class MoneySpawner : MonoBehaviour
 {
     public static UnityEvent<int> GetMoney = new();
-    public static UnityEvent<int> looseMoney = new();
+    public static UnityEvent<int> LooseMoney = new();
     public static UnityEvent<int> ChangeMoney = new();
 
     public static MoneySpawner Instance{ private set; get; }
 
-    public int startMoney{ private set; get; } = 1;
-    //public int releasemoney{ private set; get; }
+    public int StartMoney{ private set; get; } = 1;
     
-    
-    
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    // Beim Start wird ein DontDestroy beim Laden eingerichtet. Außerdem, wenn die Instanz schon existiert wird eine neue zerstört
+    // Danach wird ein Listener für das bekommen und verlieren von Geld eingerichtet.
     void Start()
     {
         DontDestroyOnLoad(this);
@@ -27,25 +24,18 @@ public class MoneySpawner : MonoBehaviour
             return;
         }
         GetMoney.AddListener(ToGetMoney);
-        looseMoney.AddListener(ToLooseMoney);
+        LooseMoney.AddListener(ToLooseMoney);
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        if (Keyboard.current.qKey.wasPressedThisFrame){
-            GetMoney.Invoke(1);
-        }
-    }
-
+    
+    // Methode fuer das Bekommen von Gold 
     private void ToGetMoney(int amount){
-        startMoney += amount;
-        ChangeMoney.Invoke(startMoney);
-        //looseMoney.Invoke(startMoney);
+        StartMoney += amount;
+        ChangeMoney.Invoke(StartMoney);
     }
 
+    // Methode fuer das verlieren von Gold
     public void ToLooseMoney(int x){
-        startMoney -= x;
-        ChangeMoney.Invoke(startMoney);
+        StartMoney -= x;
+        ChangeMoney.Invoke(StartMoney);
     }
 }
