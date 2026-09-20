@@ -22,6 +22,7 @@ public class ZielscheibeScript : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start(){
         start = transform.position.z;
+        targets = 12;
     }
 
     // Update is called once per frame

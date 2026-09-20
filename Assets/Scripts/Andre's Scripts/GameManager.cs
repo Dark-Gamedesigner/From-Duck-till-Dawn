@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance;
     
     private int targets = 12;
-    //[SerializeField] private GameObject Crosshair;
+    [SerializeField] private GameObject Crosshair;
    
     private UnityEvent Gamewin = new ();
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -21,9 +21,11 @@ public class GameManager : MonoBehaviour
             ZielscheibeScript.TargetHit.AddListener(OnTargetHit);
             
         } 
-        /*else if (Instance != this){
-            Destroy(gameObject); return;
-        }*/
+        else if (Instance != this){
+            Destroy(gameObject);
+            return;
+        }
+        
     }
 
     /*public static void SetCrosshair(bool newState){
@@ -46,7 +48,10 @@ public class GameManager : MonoBehaviour
     }
     public void OnGameWin(){
         SceneManager.LoadScene("Scenes/Saloon");
-        
         //SetCrosshair(false);
     }
+
+    /*public void ResetScene(){
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }*/
 }
