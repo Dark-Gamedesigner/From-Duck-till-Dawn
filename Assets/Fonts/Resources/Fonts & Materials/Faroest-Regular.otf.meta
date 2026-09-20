@@ -10,7 +10,8 @@ TrueTypeFontImporter:
   includeFontData: 1
   fontNames:
   - Faroest
-  fallbackFontReferences: []
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: e950d46e5c0abb34eb58f9466e767850, type: 3}
   customCharacters: 
   fontRenderingMode: 0
   ascentCalculationMode: 1
