@@ -1,45 +1,50 @@
 using UnityEngine;
 using UnityEngine.Events;
-using UnityEngine.InputSystem;
-using UnityEngine.SceneManagement;
-
 
 public class ZielscheibeScript : MonoBehaviour
 {
-    private float speed = 1.5f;
-    private float distance = 4.25f;
-    private float start;
+    private float _speed = 1.5f;
+    private float _distance = 4.25f;
+    private float _start;
 
     private int _currentHitPoints = 1;
 
-    public static int targets = 12;
+    public static int Targets = 12;
     public static UnityEvent TargetHit = new();
-
-    private static UnityEvent GameWinned = new();
-
     
     
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    // erzeugt beim Start 12 Ziele
     void Start(){
-        start = transform.position.z;
+        _start = transform.position.z;
+        Targets = 12;
     }
 
-    // Update is called once per frame
+    // Update Methode fuer das Bewegen der Ziele auf einer Achse
     void Update(){
-        float newPosZ = start + Mathf.PingPong(Time.time * speed, distance);
+        float newPosZ = _start + Mathf.PingPong(Time.time * _speed, _distance);
         transform.position = new Vector3(transform.position.x, transform.position.y, newPosZ);
     }
 
+    // Methode fuer treffen der Ziele 
     public void Hited(int incomingHit = 1 ){
+        
         int wouldBeHit = _currentHitPoints - incomingHit;
         Destroy(gameObject);
-        if (Random.value < 0.7f){
-            MoneySpawner.GetMoney.Invoke(1);
-        }
-        targets--;
-        TargetHit.Invoke();
         
+        // setzt einen zufaelligen Wert
+        float getGold = Random.value;
+        //Debug.Log(getGold);
+        
+        // wenn der zufaellige Wert bei 0- unter 70 liegt, gibt es 1 Gold 
+        if (getGold < 0.7f){
+            MoneySpawner.GetMoney.Invoke(1);
+            //Debug.Log(MoneySpawner.GetMoney);
+        }
+        
+        // Danach wird die Ziele Minus gerechnet
+        Targets--;
+        
+        // Danach wir das Event Ziel getroffen eingeleitet
+        TargetHit.Invoke();
     }
-
-    
 }

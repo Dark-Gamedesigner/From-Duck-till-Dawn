@@ -1,6 +1,3 @@
-using System;
-using NUnit.Framework;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class Equipmentscript : MonoBehaviour
@@ -17,27 +14,32 @@ public class Equipmentscript : MonoBehaviour
 
     public float interaction = 3.0f; 
     
-    private Equipment Equip;
+    private Equipment _equip;
     //public Equipment InRange;
 
+    // Wenn E gedrueckt wird, wird der Gegenstand ausgeruestet
     private void Update(){
         if (Input.GetKeyDown(KeyCode.E)){
             GetEquip();
         }
     }
 
+    // Funktion zum ausruesten der Gegenstaende
     void GetEquip(){
         Ray ray = new Ray(transform.position, transform.forward);
         RaycastHit hit;
+        
+        
+        if (Physics.Raycast(ray, out hit, interaction )){                                   // Wenn ein Raycast in der Range der Gegenstaende ist
+            EquipGegenstand newItem = hit.collider.GetComponent<EquipGegenstand>();         // Bekommt der Gegenstand die Komponente EquipGegenstand
+            
+            // Abfrage nach Item ob schon vorhanden 
+            if (newItem != null){                                                        // Wenn newItem nicht null ist
+                Transform targetTrans = null;                                               // wird targetTrans null...
+                EquipGegenstand currentEquip = null;                                        // ... sowie auch currentEquip
 
-        if (Physics.Raycast(ray, out hit, interaction )){
-            EquipGegenstand newItem = hit.collider.GetComponent<EquipGegenstand>();
-
-            if (newItem != null){
-                Transform targetTrans = null;
-                EquipGegenstand currentEquip = null;
-
-                switch (newItem.targetSlot.Equip){
+                //hier wird der neue Gegenstand an den slot angeheftet
+                switch (newItem.targetSlot._equip){
                     case Equipment.Cowboyhat:
                         targetTrans = headSlot;
                         currentEquip = headEquipt;
@@ -52,16 +54,18 @@ public class Equipmentscript : MonoBehaviour
                         break;
                 }
 
+                // hier wird es ausgeruestet
                 if (targetTrans == null){
                     if (currentEquip != null){
                         newItem.Equipt(targetTrans);
-                        UpdateSlot(Equip, newItem);
+                        UpdateSlot(_equip, newItem);
                     }
                 }
             }
         }
     }
 
+    // prueft gegenwaertigen Slot, ob Item vorhanden
     void UpdateSlot(Equipment slot, EquipGegenstand item){
         switch (slot){
             case Equipment.Cowboyhat: headEquipt = item; break;
@@ -71,6 +75,7 @@ public class Equipmentscript : MonoBehaviour
     }
     
 }
+
 
 public enum Equipment
 {

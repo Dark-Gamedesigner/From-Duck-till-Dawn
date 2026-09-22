@@ -3,14 +3,16 @@ using UnityEngine;
 
 public class MoneyUiController : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    // Beim Start wird Dont Destroy eingerichtet. Außerdem ein Listener fuer das Updaten des Goldes und die Methode ...
+    // ... für die Anzeige wird aufgerufen
     void Start()
     {
         DontDestroyOnLoad(this);
         MoneySpawner.ChangeMoney.AddListener(UpdateGetMoney);
-        UpdateGetMoney(MoneySpawner.Instance.startMoney);
+        UpdateGetMoney(MoneySpawner.Instance.StartMoney);
     }
 
+    // Methoden für das Anzeigen des aktuellen Goldes (Zahl) als Text
     private void UpdateGetMoney(int newGetMoney){
         GetComponent<TextMeshProUGUI>().text = newGetMoney.ToString();
     }
