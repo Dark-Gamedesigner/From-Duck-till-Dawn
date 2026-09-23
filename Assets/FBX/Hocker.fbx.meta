@@ -1,19 +1,9 @@
 fileFormatVersion: 2
-guid: 40c5890d51bcd884e8c0370925da872a
+guid: b9b3fb18e61382c4ba91a4d6b59c1c25
 ModelImporter:
   serializedVersion: 24200
   internalIDToNameTable: []
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Material.002
-    second: {fileID: 2100000, guid: c4a40fee5a3feff4c936f090a8a97f1f, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: stuhl2
-    second: {fileID: 2100000, guid: 0863aa2447b437b4480c268e7b9a72fa, type: 2}
+  externalObjects: {}
   materials:
     materialImportMode: 2
     materialName: 0

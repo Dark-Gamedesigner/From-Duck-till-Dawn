@@ -1,19 +1,9 @@
 fileFormatVersion: 2
-guid: 37cd66a50d2aa6449a61d50ec397952d
+guid: e1a1dd0c6061efa4299ebb8394c676b5
 ModelImporter:
   serializedVersion: 24200
   internalIDToNameTable: []
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Bein
-    second: {fileID: 2100000, guid: 7c611b6b32e85714aabdb6cb072a6608, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Platte
-    second: {fileID: 2100000, guid: c926d78b38b8a9d498f26aa73ddbd5fa, type: 2}
+  externalObjects: {}
   materials:
     materialImportMode: 2
     materialName: 0
