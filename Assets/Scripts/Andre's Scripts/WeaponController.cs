@@ -1,26 +1,24 @@
-using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class WeaponController : MonoBehaviour
 {
-    public Transform muzzle;
     public WeaponData weaponData;
 
-    public int countAmmo{ get; private set; }
+    public int CountAmmo{ get; private set; }
 
-    private bool reloading = false;
-    private bool shooting = false;
-    private bool readyToShoot =true;
+    private bool _reloading = false;
+    private bool _shooting = false;
+    private bool _readyToShoot =true;
 
     public List<ZielscheibeScript> zielscheibeScript;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start(){
-        countAmmo = weaponData.maxAmmo;
+        CountAmmo = weaponData.maxAmmo;
     }
 
-    // Update is called once per frame
+    // Wenn die linke Maustaste gedrueckt wird die Methode schießen aufgerufen 
     void Update()
     {
         if (Mouse.current.leftButton.wasPressedThisFrame){
@@ -28,33 +26,45 @@ public class WeaponController : MonoBehaviour
         }
     }
 
+    // Methode für das Schießen
     public void Shoot(){
-        if (! readyToShoot || shooting || reloading || weaponData == null) return;
-        if (countAmmo <= 0){Reload();return;}
-
-        readyToShoot = false;
-        shooting = true;
-
-        UseAmmo();
-        Invoke(nameof(ResetAttack), weaponData.fireRate);
-        AttackRaycast();
-        Instantiate(weaponData);
+        // wenn bereit zum Schießen, Schuss, Nachladen, und das scriptable Object null ist passiert nichts 
+        if (! _readyToShoot || _shooting || _reloading || weaponData == null) return; 
         
+        // Wenn Munition alle ist Nachladen (durch Nachladen Methode), danach zurueck 
+        if (CountAmmo <= 0){Reload();return;}
+
+        // Bereit zum Schießen wird auf false gesetzt und Schuss auf true 
+        _readyToShoot = false;
+        _shooting = true;
+
+        // Munition wird abgezogen 
+        UseAmmo();
+        // dann wird ResetAttack iniziert mit der feuerrate aus dem Waffendaten Script 
+        Invoke(nameof(ResetAttack), weaponData.fireRate);
+        // wohin geschossen wird 
+        AttackRaycast();
+        // Instanziieren von weaponData
+        Instantiate(weaponData);
     }
 
+    // Methode wohin geschossen wird
     private void AttackRaycast(){
         RaycastHit hit;
-        RaycastHit[] hits;
 
+        // 
         switch (weaponData.Type){
             case WeaponType.Patrone:
-                if (Physics.Raycast(transform.position, transform.forward, out hit, weaponData.weaponRange)){
+                if (Physics.Raycast(transform.position, Camera.main.transform.forward, out hit, 
+                        weaponData.weaponRange)){
+                    //Debug.DrawLine(transform.position,hit.point, Color.blue, 1);
                     HitTarget(hit);
                     var zielScheibe = hit.collider.GetComponent<ZielscheibeScript>();
                     if (zielScheibe){
-                        zielScheibe.Hited(1);
+                        zielScheibe.Hited();
                     }
                 } 
+                //Debug.DrawLine(transform.position, transform.position + Camera.main.transform.forward * 100, Color.red, 1);
                 break;
         }
     }
@@ -64,22 +74,27 @@ public class WeaponController : MonoBehaviour
         Destroy(obj, 4);
     }
 
+    // Methode, wenn der Angriff zurueckgesetzt wird 
     void ResetAttack(){
-        shooting = false;
-        readyToShoot = true;
-    }
-    private void UseAmmo(){
-        countAmmo--;
+        _shooting = false;
+        _readyToShoot = true;
     }
     
+    // Methode für das Verbrauchen von Munition
+    private void UseAmmo(){
+        CountAmmo--;
+    }
+    
+    // Methode zum Nachladen
     public void Reload(){
-        if (countAmmo == weaponData.maxAmmo || reloading) return;
-        reloading = true;
+        if (CountAmmo == weaponData.maxAmmo || _reloading) return;
+        _reloading = true;
         Invoke(nameof(ResetReload), weaponData.reload);
     }
 
+    // Methode zum Reseten des Nachladen
     void ResetReload(){
-        reloading = false;
-        countAmmo = weaponData.maxAmmo;
+        _reloading = false;
+        CountAmmo = weaponData.maxAmmo;
     }
 }

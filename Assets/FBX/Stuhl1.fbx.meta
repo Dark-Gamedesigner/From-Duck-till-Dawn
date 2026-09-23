@@ -1,4 +1,5 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: 74decec2c1b3610488df830b5c153fc8
 ModelImporter:
   serializedVersion: 24200
@@ -9,6 +10,13 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: stuhl2
     second: {fileID: 2100000, guid: d30c420d6de4fb9458718d337e4aec06, type: 2}
+=======
+guid: bac35a9938362d146896c985f4800821
+ModelImporter:
+  serializedVersion: 24200
+  internalIDToNameTable: []
+  externalObjects: {}
+>>>>>>> origin/main
   materials:
     materialImportMode: 2
     materialName: 0

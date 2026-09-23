@@ -1,4 +1,5 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: cbe35ce01762c274f999dcb2367b6b17
 ModelImporter:
   serializedVersion: 24200
@@ -19,6 +20,13 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: Wasser
     second: {fileID: 2100000, guid: 99511c65a28153044b0410ad345d1eca, type: 2}
+=======
+guid: a7abeb529ecbadb4ab96c90aab5d88f8
+ModelImporter:
+  serializedVersion: 24200
+  internalIDToNameTable: []
+  externalObjects: {}
+>>>>>>> origin/main
   materials:
     materialImportMode: 2
     materialName: 0

@@ -1,4 +1,5 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: 37cd66a50d2aa6449a61d50ec397952d
 ModelImporter:
   serializedVersion: 24200
@@ -14,6 +15,13 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: Platte
     second: {fileID: 2100000, guid: c926d78b38b8a9d498f26aa73ddbd5fa, type: 2}
+=======
+guid: e1a1dd0c6061efa4299ebb8394c676b5
+ModelImporter:
+  serializedVersion: 24200
+  internalIDToNameTable: []
+  externalObjects: {}
+>>>>>>> origin/main
   materials:
     materialImportMode: 2
     materialName: 0
