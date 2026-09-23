@@ -1,11 +1,5 @@
 using UnityEngine;
 
-/// <summary>
-/// Erkennt Maus-Klicks waehrend eines aktiven Schiess-Minispiels
-/// und prueft per Raycast, ob eine Flasche getroffen wurde.
-/// Ist normalerweise deaktiviert - wird nur waehrend eines laufenden
-/// Minispiels von BottleShootingGame.cs ein- und ausgeschaltet.
-/// </summary>
 public class ShootingInput : MonoBehaviour
 {
     [Header("Referenzen")]
@@ -14,8 +8,6 @@ public class ShootingInput : MonoBehaviour
 
     private void Awake()
     {
-        // In Minispiel-Szenen sitzt dieses Script direkt auf der Kamera zusammen
-        // mit MinigameLook.cs - dann reicht die eigene Transform als Ursprung.
         if (cameraTransform == null)
         {
             cameraTransform = transform;
@@ -28,6 +20,13 @@ public class ShootingInput : MonoBehaviour
 
     [Tooltip("Layer, auf dem die Flaschen liegen (im Inspector auswaehlen)")]
     [SerializeField] private LayerMask bottleLayer;
+
+    [Header("Sichtbare Kugel")]
+    [Tooltip("Kleines Kugel-Prefab (z.B. eine Sphere), das beim Schuss sichtbar zum Ziel fliegt")]
+    [SerializeField] private GameObject bulletPrefab;
+
+    [Tooltip("Startpunkt der Kugel, z.B. die Muendung der Pistole. Falls leer, wird die Kamera-Position genutzt")]
+    [SerializeField] private Transform muzzlePoint;
 
     private bool shootingEnabled = false;
 
@@ -45,29 +44,51 @@ public class ShootingInput : MonoBehaviour
     private void TryShoot()
     {
         Ray ray = new Ray(cameraTransform.position, cameraTransform.forward);
+        Vector3 bulletTarget;
 
         if (Physics.Raycast(ray, out RaycastHit hit, shootRange, bottleLayer))
         {
+            bulletTarget = hit.point;
+
             if (hit.collider.TryGetComponent(out Bottle bottle))
             {
                 bottle.Hit();
             }
         }
-        // Kein Treffer = einfach daneben geschossen, kein Fehlerfall,
-        // hier bewusst keine Fehlermeldung noetig.
+        else
+        {
+            // Kein Treffer = einfach daneben geschossen. Die Kugel fliegt trotzdem
+            // sichtbar geradeaus bis zur maximalen Reichweite, statt einfach zu fehlen.
+            bulletTarget = ray.origin + ray.direction * shootRange;
+        }
+
+        SpawnBulletVisual(bulletTarget);
     }
 
-    /// <summary>
-    /// Wird von BottleShootingGame beim Rundenstart aufgerufen.
-    /// </summary>
+    private void SpawnBulletVisual(Vector3 target)
+    {
+        if (bulletPrefab == null) return;
+
+        Vector3 startPosition = muzzlePoint != null ? muzzlePoint.position : cameraTransform.position;
+
+        GameObject bullet = Instantiate(bulletPrefab, startPosition, Quaternion.identity);
+        BulletTravel travel = bullet.GetComponent<BulletTravel>();
+
+        if (travel != null)
+        {
+            travel.SetTarget(target);
+        }
+        else
+        {
+            Debug.LogWarning("ShootingInput: bulletPrefab hat kein BulletTravel-Script!");
+        }
+    }
+
     public void EnableShooting()
     {
         shootingEnabled = true;
     }
-
-    /// <summary>
-    /// Wird von BottleShootingGame beim Rundenende aufgerufen.
-    /// </summary>
+    
     public void DisableShooting()
     {
         shootingEnabled = false;
