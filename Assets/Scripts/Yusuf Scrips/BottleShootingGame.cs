@@ -1,11 +1,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using TMPro;
+
 
 public class BottleShootingGame : MonoBehaviour
 {
-    // Singleton-Zugriff, damit Bottle.cs sich einfach zurückmelden kann,
-    // ohne dass jede Flasche eine eigene Referenz im Inspector braucht.
+   
     public static BottleShootingGame Instance { get; private set; }
 
     [Header("Runden-Einstellungen")]
@@ -30,8 +31,15 @@ public class BottleShootingGame : MonoBehaviour
     public UnityEvent OnGameLost;
 
     [Header("Rueckkehr zum Saloon")]
-    [Tooltip("Wartezeit nach Spielende, bevor die Szene entladen wird (Zeit fuer Sieg/Niederlage-UI)")]
+    [Tooltip("Wartezeit nach GEWONNENER Runde, bevor die Szene entladen wird (Zeit fuer Sieg-UI)")]
     [SerializeField] private float returnDelay = 1.5f;
+
+    [Header("UI: Uhr und Game Over")]
+    [Tooltip("Text-Element, das die verbleibende Zeit anzeigt (mm:ss)")]
+    [SerializeField] private TMP_Text timerText;
+
+    [Tooltip("Panel, das bei Zeitablauf (verloren) eingeblendet wird")]
+    [SerializeField] private GameObject gameOverPanel;
 
     [Header("Testen")]
     [Tooltip("Nur fuer isoliertes Testen dieser Szene: startet die Runde automatisch, ohne ueber Saloon -> Station zu gehen. Vor dem finalen Build wieder ausschalten!")]
@@ -44,13 +52,13 @@ public class BottleShootingGame : MonoBehaviour
 
     private void Awake()
     {
-        // Einfache Singleton-Absicherung
         if (Instance != null && Instance != this)
         {
             Debug.LogWarning("Mehr als eine BottleShootingGame-Instanz in der Szene!");
             return;
         }
         Instance = this;
+
         shootingInput = FindFirstObjectByType<ShootingInput>();
         if (shootingInput == null)
         {
@@ -72,12 +80,24 @@ public class BottleShootingGame : MonoBehaviour
 
         timeRemaining -= Time.deltaTime;
         OnTimeChanged?.Invoke(timeRemaining);
+        UpdateTimerDisplay();
 
         if (timeRemaining <= 0f)
         {
             EndGame(won: false);
         }
     }
+
+    private void UpdateTimerDisplay()
+    {
+        if (timerText == null) return;
+
+        float displayTime = Mathf.Max(timeRemaining, 0f);
+        int minutes = Mathf.FloorToInt(displayTime / 60f);
+        int seconds = Mathf.FloorToInt(displayTime % 60f);
+        timerText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
+    }
+
     public void StartGame()
     {
         currentHits = 0;
@@ -95,7 +115,7 @@ public class BottleShootingGame : MonoBehaviour
         OnScoreChanged?.Invoke(currentHits, bottlesNeededToWin);
         OnTimeChanged?.Invoke(timeRemaining);
     }
-    
+
     public void OnBottleHit(Bottle bottle)
     {
         if (!gameIsActive) return;
@@ -122,21 +142,41 @@ public class BottleShootingGame : MonoBehaviour
         if (won)
         {
             OnGameWon?.Invoke();
+            Invoke(nameof(ReturnToSaloon), returnDelay);
         }
         else
         {
             OnGameLost?.Invoke();
+
+            if (gameOverPanel != null)
+            {
+                gameOverPanel.SetActive(true);
+            }
+        }
+    }
+
+    public void RetryFromGameOver()
+    {
+        if (gameOverPanel != null)
+        {
+            gameOverPanel.SetActive(false);
         }
 
-        // Kurze Pause, damit der Spieler das Ergebnis (z.B. "Gewonnen!"-UI) noch
-        // sieht, bevor die Szene entladen wird und er zurueck im Saloon landet.
-        Invoke(nameof(ReturnToSaloon), returnDelay);
+        StartGame();
+    }
+
+    public void BackToSaloonFromGameOver()
+    {
+        if (gameOverPanel != null)
+        {
+            gameOverPanel.SetActive(false);
+        }
+
+        ReturnToSaloon();
     }
 
     private void ReturnToSaloon()
     {
-        // Beim isolierten Testen (autoStartForTesting) existiert kein
-        // MinigameSceneLoader, weil die Szene nicht ueber Saloon geladen wurde.
         if (MinigameSceneLoader.Instance != null)
         {
             MinigameSceneLoader.Instance.FinishCurrentMinigame(lastResultWon);
