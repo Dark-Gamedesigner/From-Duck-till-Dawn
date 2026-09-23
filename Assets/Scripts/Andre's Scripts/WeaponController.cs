@@ -8,20 +8,33 @@ public class WeaponController : MonoBehaviour
 
     public int CountAmmo{ get; private set; }
 
-    private bool _reloading = false;
-    private bool _shooting = false;
+    private bool _reloading;
+    private bool _shooting;
     private bool _readyToShoot =true;
+    [SerializeField]
+    private ShootSound _shootSound;
+    [SerializeField]
+    private AudioSource source;
 
     public List<ZielscheibeScript> zielscheibeScript;
+
+    [Header("BulletTracer")] 
+    [SerializeField]
+    private BulletTracer bulletTracer;
+
+    public Transform muzzle;
+    
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start(){
         CountAmmo = weaponData.maxAmmo;
+        bulletTracer.InitializeTracers();
     }
 
     // Wenn die linke Maustaste gedrueckt wird die Methode schießen aufgerufen 
     void Update()
     {
         if (Mouse.current.leftButton.wasPressedThisFrame){
+            _shootSound.PlayShootingClip(source);
             Shoot();
         }
     }
@@ -50,6 +63,7 @@ public class WeaponController : MonoBehaviour
 
     // Methode wohin geschossen wird
     private void AttackRaycast(){
+        //muzzleFlash.Play();
         RaycastHit hit;
 
         // 
@@ -58,12 +72,16 @@ public class WeaponController : MonoBehaviour
                 if (Physics.Raycast(transform.position, Camera.main.transform.forward, out hit, 
                         weaponData.weaponRange)){
                     //Debug.DrawLine(transform.position,hit.point, Color.blue, 1);
+                    bulletTracer.PlayTracing(muzzle.transform.position, hit.point);
                     HitTarget(hit);
                     var zielScheibe = hit.collider.GetComponent<ZielscheibeScript>();
                     if (zielScheibe){
                         zielScheibe.Hited();
                     }
-                } 
+                }
+                else{
+                    bulletTracer.PlayTracing(muzzle.transform.position, hit.point);
+                }
                 //Debug.DrawLine(transform.position, transform.position + Camera.main.transform.forward * 100, Color.red, 1);
                 break;
         }
