@@ -1,17 +1,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using TMPro;
 
-/// <summary>
-/// Zentrale Logik fuer das Minispiel "Flaschenabschiessen".
-/// Verwaltet Start, Ablauf, Zeitlimit, Trefferzaehler und Erfolg/Misserfolg.
-/// Andere Systeme (UI, GameManager/RewardHandler) haengen sich ueber die
-/// UnityEvents unten ein, statt dass dieses Script sie direkt kennen muss.
-/// </summary>
+
 public class BottleShootingGame : MonoBehaviour
 {
-    // Singleton-Zugriff, damit Bottle.cs sich einfach zurückmelden kann,
-    // ohne dass jede Flasche eine eigene Referenz im Inspector braucht.
+   
     public static BottleShootingGame Instance { get; private set; }
 
     [Header("Runden-Einstellungen")]
@@ -36,8 +31,19 @@ public class BottleShootingGame : MonoBehaviour
     public UnityEvent OnGameLost;
 
     [Header("Rueckkehr zum Saloon")]
-    [Tooltip("Wartezeit nach Spielende, bevor die Szene entladen wird (Zeit fuer Sieg/Niederlage-UI)")]
+    [Tooltip("Wartezeit nach GEWONNENER Runde, bevor die Szene entladen wird (Zeit fuer Sieg-UI)")]
     [SerializeField] private float returnDelay = 1.5f;
+
+    [Header("UI: Uhr und Game Over")]
+    [Tooltip("Text-Element, das die verbleibende Zeit anzeigt (mm:ss)")]
+    [SerializeField] private TMP_Text timerText;
+
+    [Tooltip("Panel, das bei Zeitablauf (verloren) eingeblendet wird")]
+    [SerializeField] private GameObject gameOverPanel;
+
+    [Header("Testen")]
+    [Tooltip("Nur fuer isoliertes Testen dieser Szene: startet die Runde automatisch, ohne ueber Saloon -> Station zu gehen. Vor dem finalen Build wieder ausschalten!")]
+    [SerializeField] private bool autoStartForTesting = false;
 
     private int currentHits = 0;
     private float timeRemaining;
@@ -46,7 +52,6 @@ public class BottleShootingGame : MonoBehaviour
 
     private void Awake()
     {
-        // Einfache Singleton-Absicherung
         if (Instance != null && Instance != this)
         {
             Debug.LogWarning("Mehr als eine BottleShootingGame-Instanz in der Szene!");
@@ -54,14 +59,18 @@ public class BottleShootingGame : MonoBehaviour
         }
         Instance = this;
 
-        // ShootingInput liegt auf dem Player-Objekt in der Saloon-Szene, die
-        // additiv geladen im Hintergrund bleibt - deshalb hier zur Laufzeit
-        // suchen statt per Inspector zu verknuepfen (Cross-Scene-Referenzen
-        // funktionieren im Inspector nicht zuverlaessig).
         shootingInput = FindFirstObjectByType<ShootingInput>();
         if (shootingInput == null)
         {
             Debug.LogWarning("BottleShootingGame: Kein ShootingInput in der Szene gefunden!");
+        }
+    }
+
+    private void Start()
+    {
+        if (autoStartForTesting)
+        {
+            StartGame();
         }
     }
 
@@ -71,6 +80,7 @@ public class BottleShootingGame : MonoBehaviour
 
         timeRemaining -= Time.deltaTime;
         OnTimeChanged?.Invoke(timeRemaining);
+        UpdateTimerDisplay();
 
         if (timeRemaining <= 0f)
         {
@@ -78,10 +88,16 @@ public class BottleShootingGame : MonoBehaviour
         }
     }
 
-    /// <summary>
-    /// Wird von der Station (z.B. BottleShootingStation.cs) aufgerufen,
-    /// wenn der Spieler mit "E" das Minispiel startet.
-    /// </summary>
+    private void UpdateTimerDisplay()
+    {
+        if (timerText == null) return;
+
+        float displayTime = Mathf.Max(timeRemaining, 0f);
+        int minutes = Mathf.FloorToInt(displayTime / 60f);
+        int seconds = Mathf.FloorToInt(displayTime % 60f);
+        timerText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
+    }
+
     public void StartGame()
     {
         currentHits = 0;
@@ -100,9 +116,6 @@ public class BottleShootingGame : MonoBehaviour
         OnTimeChanged?.Invoke(timeRemaining);
     }
 
-    /// <summary>
-    /// Wird von Bottle.cs aufgerufen, sobald eine Flasche getroffen wurde.
-    /// </summary>
     public void OnBottleHit(Bottle bottle)
     {
         if (!gameIsActive) return;
@@ -129,20 +142,49 @@ public class BottleShootingGame : MonoBehaviour
         if (won)
         {
             OnGameWon?.Invoke();
+            Invoke(nameof(ReturnToSaloon), returnDelay);
         }
         else
         {
             OnGameLost?.Invoke();
+
+            if (gameOverPanel != null)
+            {
+                gameOverPanel.SetActive(true);
+            }
+        }
+    }
+
+    public void RetryFromGameOver()
+    {
+        if (gameOverPanel != null)
+        {
+            gameOverPanel.SetActive(false);
         }
 
-        // Kurze Pause, damit der Spieler das Ergebnis (z.B. "Gewonnen!"-UI) noch
-        // sieht, bevor die Szene entladen wird und er zurueck im Saloon landet.
-        Invoke(nameof(ReturnToSaloon), returnDelay);
+        StartGame();
+    }
+
+    public void BackToSaloonFromGameOver()
+    {
+        if (gameOverPanel != null)
+        {
+            gameOverPanel.SetActive(false);
+        }
+
+        ReturnToSaloon();
     }
 
     private void ReturnToSaloon()
     {
-        MinigameSceneLoader.Instance.FinishCurrentMinigame(lastResultWon);
+        if (MinigameSceneLoader.Instance != null)
+        {
+            MinigameSceneLoader.Instance.FinishCurrentMinigame(lastResultWon);
+        }
+        else
+        {
+            Debug.Log("Testlauf beendet (kein MinigameSceneLoader vorhanden - normal beim isolierten Testen).");
+        }
     }
 
     private void ResetAllBottles()
