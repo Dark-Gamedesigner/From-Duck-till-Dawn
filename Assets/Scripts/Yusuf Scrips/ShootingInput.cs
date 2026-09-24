@@ -3,31 +3,26 @@ using UnityEngine;
 public class ShootingInput : MonoBehaviour
 {
     [Header("Referenzen")]
-    [Tooltip("Die Kamera, aus der geschossen wird. Falls leer, wird automatisch die Kamera auf diesem GameObject verwendet")]
     [SerializeField] private Transform cameraTransform;
 
     [Header("Einstellungen")]
-    [Tooltip("Maximale Schussreichweite")]
     [SerializeField] private float shootRange = 500f;
-
-    [Tooltip("Layer, auf dem die Flaschen liegen")]
     [SerializeField] private LayerMask bottleLayer;
 
     [Header("Munition")]
-    [Tooltip("Wie viele Schuesse der Spieler pro Runde hat")]
     [SerializeField] private int maxAmmo = 8;
 
     [Header("Sichtbare Kugel")]
-    [Tooltip("Kleines Kugel-Prefab, das beim Schuss sichtbar zum Ziel fliegt")]
     [SerializeField] private GameObject bulletPrefab;
-
-    [Tooltip("Startpunkt der Kugel, z.B. die Muendung der Pistole. Falls leer, wird die Kamera-Position genutzt")]
     [SerializeField] private Transform muzzlePoint;
+
+    [Header("Sound")]
+    [SerializeField] private AudioClip shootSound;
+    [SerializeField] private AudioClip emptySound;
 
     private bool shootingEnabled = false;
     private int currentAmmo;
 
-    
     public int CurrentAmmo => currentAmmo;
     public int MaxAmmo => maxAmmo;
 
@@ -48,12 +43,20 @@ public class ShootingInput : MonoBehaviour
             if (currentAmmo > 0)
             {
                 currentAmmo--;
+
+                if (shootSound != null)
+                {
+                    AudioSource.PlayClipAtPoint(shootSound, transform.position);
+                }
+
                 TryShoot();
             }
             else
             {
-                Debug.Log("Keine Munition mehr!");
-                // Hier koennte spaeter ein "Klick"-Sound fuer leere Waffe rein
+                if (emptySound != null)
+                {
+                    AudioSource.PlayClipAtPoint(emptySound, transform.position);
+                }
             }
         }
     }
@@ -93,13 +96,8 @@ public class ShootingInput : MonoBehaviour
         {
             travel.SetTarget(target);
         }
-        else
-        {
-            Debug.LogWarning("ShootingInput: bulletPrefab hat kein BulletTravel-Script!");
-        }
     }
 
-    
     public void EnableShooting()
     {
         shootingEnabled = true;

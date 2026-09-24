@@ -1502,11 +1502,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -710530460573877748, guid: c67eeffcef7d0ab479381fb885a8fd53, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.70969146
+      value: 0.71
       objectReference: {fileID: 0}
     - target: {fileID: -710530460573877748, guid: c67eeffcef7d0ab479381fb885a8fd53, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.099921845
+      value: 0.52
       objectReference: {fileID: 0}
     - target: {fileID: -710530460573877748, guid: c67eeffcef7d0ab479381fb885a8fd53, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3183,7 +3183,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -288.4173, y: 187.27313}
+  m_AnchoredPosition: {x: -412, y: 250}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &283600061
@@ -4133,7 +4133,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2020897829}
-  - {fileID: 828666494}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &349298600
@@ -4650,8 +4649,8 @@ MonoBehaviour:
     m_Bits: 1
   m_VolumeTrigger: {fileID: 0}
   m_VolumeFrameworkUpdateModeOption: 2
-  m_RenderPostProcessing: 0
-  m_Antialiasing: 0
+  m_RenderPostProcessing: 1
+  m_Antialiasing: 1
   m_AntialiasingQuality: 2
   m_StopNaN: 0
   m_Dithering: 0
@@ -4691,6 +4690,8 @@ MonoBehaviour:
   maxAmmo: 500
   bulletPrefab: {fileID: 3533414211802605994, guid: be66561bc534ce4439ba6c23419985b6, type: 3}
   muzzlePoint: {fileID: 252091734}
+  shootSound: {fileID: 0}
+  emptySound: {fileID: 0}
 --- !u!114 &385994513
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5552,7 +5553,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1790240780}
-  - {fileID: 128579298}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &440804236 stripped
@@ -16404,15 +16404,15 @@ RectTransform:
   m_GameObject: {fileID: 1389719699}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1.3, y: 1.3, z: 1.3}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1716963209}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1.8804932, y: 4.2221985}
-  m_SizeDelta: {x: 36.5, y: 38.25}
+  m_AnchorMax: {x: 0.508, y: 0.5}
+  m_AnchoredPosition: {x: -8.114136, y: 5.8750305}
+  m_SizeDelta: {x: 34.5, y: 38.25}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1389719701
 MonoBehaviour:
@@ -18241,7 +18241,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 374.2845, y: 183.27954}
+  m_AnchoredPosition: {x: 412, y: 250}
   m_SizeDelta: {x: 250, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1716963210
@@ -18264,7 +18264,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 5:00
+  m_text: 3:00
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -18503,6 +18503,55 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: b9b3fb18e61382c4ba91a4d6b59c1c25, type: 3}
   m_PrefabInstance: {fileID: 1980129852}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1743996829
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1743996831}
+  - component: {fileID: 1743996830}
+  m_Layer: 0
+  m_Name: Global Volume
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1743996830
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1743996829}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.RenderPipelines.Core.Runtime::UnityEngine.Rendering.Volume
+  m_IsGlobal: 1
+  priority: 0
+  blendDistance: 0
+  weight: 1
+  sharedProfile: {fileID: 11400000, guid: 61b91042ec8f3524da44dbe9967f3e13, type: 2}
+--- !u!4 &1743996831
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1743996829}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 4.7192783, y: 0.35736674, z: -36.196663}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1746212488 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1201585655854488808, guid: d694a8cdb2c8304419786acb402b2826, type: 3}
@@ -19276,14 +19325,14 @@ RectTransform:
   m_GameObject: {fileID: 1913848570}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1.2, y: 1.2, z: 1.2}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 283600060}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -18.827148, y: 5.6249695}
+  m_AnchoredPosition: {x: -30, y: 6}
   m_SizeDelta: {x: 36.5, y: 61.25}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1913848572
@@ -19818,7 +19867,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 8300000, guid: a9bbf20f01f255d4c80743af578788ed, type: 3}
+  m_Resource: {fileID: 8300000, guid: 247bcdd5933744a4a946891a181a3e0a, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -20665,3 +20714,5 @@ SceneRoots:
   - {fileID: 1701106462}
   - {fileID: 1778914677}
   - {fileID: 1295321056}
+  - {fileID: 330038114}
+  - {fileID: 1743996831}
