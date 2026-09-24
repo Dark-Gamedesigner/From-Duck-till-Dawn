@@ -56,9 +56,10 @@ public class Bottle : MonoBehaviour
             Instantiate(hitEffectPrefab, transform.position, Quaternion.identity);
         }
 
-        if (hitSound != null && audioSource != null)
+        if (hitSound != null)
         {
-            audioSource.PlayOneShot(hitSound);
+            
+            AudioSource.PlayClipAtPoint(hitSound, transform.position);
         }
     }
 

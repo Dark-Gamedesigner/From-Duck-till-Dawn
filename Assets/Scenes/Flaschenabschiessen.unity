@@ -210,13 +210,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 439120}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.56173474, y: 0.37941244, z: -0.68916935, w: 0.25601926}
-  m_LocalPosition: {x: 2.333, y: 1.96, z: 0.972}
+  m_LocalRotation: {x: -0.2580698, y: -0.57533526, z: 0.7226877, w: -0.2830405}
+  m_LocalPosition: {x: 16.780882, y: 46.795845, z: -32.369293}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 54.153, y: -82.05, z: -187.198}
+  m_LocalEulerAnglesHint: {x: 77.867, y: 346.988, z: -147.752}
 --- !u!114 &439123
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -398,7 +398,7 @@ AudioSource:
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 101
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
@@ -628,7 +628,7 @@ AudioSource:
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 101
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
@@ -953,7 +953,7 @@ AudioSource:
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 101
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
@@ -1273,7 +1273,7 @@ AudioSource:
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 101
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
@@ -1827,7 +1827,7 @@ AudioSource:
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 101
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
@@ -2057,7 +2057,7 @@ AudioSource:
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 101
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
@@ -2287,7 +2287,7 @@ AudioSource:
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 101
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
@@ -2517,7 +2517,7 @@ AudioSource:
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 101
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
@@ -2832,7 +2832,7 @@ AudioSource:
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 101
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
@@ -3183,7 +3183,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -575.9173, y: 392.27313}
+  m_AnchoredPosition: {x: -288.4173, y: 187.27313}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &283600061
@@ -3272,7 +3272,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 128.69122, w: 0}
+  m_margin: {x: 1.2162476, y: 0, z: 128.69122, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -3555,7 +3555,7 @@ AudioSource:
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 101
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
@@ -3785,7 +3785,7 @@ AudioSource:
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 101
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
@@ -4020,7 +4020,7 @@ AudioSource:
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 101
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
@@ -4420,7 +4420,7 @@ AudioSource:
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 101
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
@@ -4951,7 +4951,7 @@ AudioSource:
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 101
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
@@ -5181,7 +5181,7 @@ AudioSource:
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 101
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
@@ -5411,7 +5411,7 @@ AudioSource:
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 101
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
@@ -5699,7 +5699,7 @@ AudioSource:
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 101
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
@@ -6066,7 +6066,7 @@ AudioSource:
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 101
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
@@ -6382,7 +6382,7 @@ AudioSource:
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 101
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
@@ -6714,7 +6714,7 @@ AudioSource:
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 101
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
@@ -7030,7 +7030,7 @@ AudioSource:
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 101
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
@@ -7473,7 +7473,7 @@ AudioSource:
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 101
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
@@ -7703,7 +7703,7 @@ AudioSource:
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 101
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
@@ -8100,7 +8100,7 @@ AudioSource:
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 101
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
@@ -8330,7 +8330,7 @@ AudioSource:
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 101
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
@@ -8667,7 +8667,7 @@ AudioSource:
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 101
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
@@ -9018,7 +9018,7 @@ AudioSource:
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 101
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
@@ -9279,7 +9279,7 @@ AudioSource:
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 101
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
@@ -9561,7 +9561,7 @@ AudioSource:
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 101
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
@@ -9817,7 +9817,7 @@ AudioSource:
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 101
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
@@ -10132,7 +10132,7 @@ AudioSource:
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 101
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
@@ -10550,7 +10550,7 @@ AudioSource:
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 101
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
@@ -10865,7 +10865,7 @@ AudioSource:
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 101
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
@@ -11095,7 +11095,7 @@ AudioSource:
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 101
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
@@ -11714,7 +11714,7 @@ AudioSource:
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 101
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
@@ -11792,6 +11792,38 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1 &950029095
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 950029096}
+  m_Layer: 0
+  m_Name: decke
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &950029096
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 950029095}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 19, z: 0}
+  m_LocalScale: {x: 1, y: 1.21, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1720032421}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &950044912
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11944,7 +11976,7 @@ AudioSource:
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 101
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
@@ -12174,7 +12206,7 @@ AudioSource:
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 101
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
@@ -12404,7 +12436,7 @@ AudioSource:
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 101
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
@@ -12634,7 +12666,7 @@ AudioSource:
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 101
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
@@ -13058,7 +13090,7 @@ AudioSource:
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 101
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
@@ -13646,7 +13678,7 @@ AudioSource:
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 101
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
@@ -14025,7 +14057,7 @@ AudioSource:
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 101
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
@@ -14255,7 +14287,7 @@ AudioSource:
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 101
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
@@ -14485,7 +14517,7 @@ AudioSource:
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 101
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
@@ -14822,7 +14854,7 @@ AudioSource:
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 101
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
@@ -15052,7 +15084,7 @@ AudioSource:
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 101
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
@@ -15396,7 +15428,7 @@ AudioSource:
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 101
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
@@ -15528,11 +15560,11 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 8300000, guid: 2ac8074b9ca7d594dac5247a51b9ee0b, type: 3}
+  m_Resource: {fileID: 8300000, guid: 247bcdd5933744a4a946891a181a3e0a, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.3
   m_Pitch: 1
-  Loop: 1
+  Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -15781,7 +15813,7 @@ AudioSource:
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 101
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
@@ -16207,7 +16239,7 @@ AudioSource:
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 101
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
@@ -16470,8 +16502,8 @@ MonoBehaviour:
   - {fileID: 970607467}
   - {fileID: 1359189637}
   - {fileID: 578423714}
-  bottlesNeededToWin: 30
-  timeLimit: 300
+  bottlesNeededToWin: 53
+  timeLimit: 150
   saloonSceneName: Saloon
   OnGameStarted:
     m_PersistentCalls:
@@ -17134,7 +17166,7 @@ AudioSource:
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 101
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
@@ -17978,7 +18010,7 @@ AudioSource:
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 101
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
@@ -18175,7 +18207,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 781.7845, y: 405.27954}
+  m_AnchoredPosition: {x: 374.2845, y: 183.27954}
   m_SizeDelta: {x: 250, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1716963210
@@ -18278,6 +18310,160 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1716963208}
   m_CullTransparentMesh: 1
+--- !u!1001 &1720032420
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 950029096}
+    m_Modifications:
+    - target: {fileID: 215524610428603077, guid: 6833f9d0a3a80f94fb9886c9f35cc89b, type: 3}
+      propertyPath: m_Name
+      value: Boden (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 332906759232383012, guid: 6833f9d0a3a80f94fb9886c9f35cc89b, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 679.2987
+      objectReference: {fileID: 0}
+    - target: {fileID: 332906759232383012, guid: 6833f9d0a3a80f94fb9886c9f35cc89b, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 827.65326
+      objectReference: {fileID: 0}
+    - target: {fileID: 332906759232383012, guid: 6833f9d0a3a80f94fb9886c9f35cc89b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 21.154331
+      objectReference: {fileID: 0}
+    - target: {fileID: 332906759232383012, guid: 6833f9d0a3a80f94fb9886c9f35cc89b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.31884003
+      objectReference: {fileID: 0}
+    - target: {fileID: 332906759232383012, guid: 6833f9d0a3a80f94fb9886c9f35cc89b, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -28.5116
+      objectReference: {fileID: 0}
+    - target: {fileID: 332906759232383012, guid: 6833f9d0a3a80f94fb9886c9f35cc89b, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.01851291
+      objectReference: {fileID: 0}
+    - target: {fileID: 332906759232383012, guid: 6833f9d0a3a80f94fb9886c9f35cc89b, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.018512813
+      objectReference: {fileID: 0}
+    - target: {fileID: 332906759232383012, guid: 6833f9d0a3a80f94fb9886c9f35cc89b, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.7068645
+      objectReference: {fileID: 0}
+    - target: {fileID: 332906759232383012, guid: 6833f9d0a3a80f94fb9886c9f35cc89b, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.7068644
+      objectReference: {fileID: 0}
+    - target: {fileID: 332906759232383012, guid: 6833f9d0a3a80f94fb9886c9f35cc89b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 332906759232383012, guid: 6833f9d0a3a80f94fb9886c9f35cc89b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 177
+      objectReference: {fileID: 0}
+    - target: {fileID: 699855443471880319, guid: 6833f9d0a3a80f94fb9886c9f35cc89b, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.82644624
+      objectReference: {fileID: 0}
+    - target: {fileID: 699855443471880319, guid: 6833f9d0a3a80f94fb9886c9f35cc89b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -7.725956
+      objectReference: {fileID: 0}
+    - target: {fileID: 699855443471880319, guid: 6833f9d0a3a80f94fb9886c9f35cc89b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -4.9419003
+      objectReference: {fileID: 0}
+    - target: {fileID: 699855443471880319, guid: 6833f9d0a3a80f94fb9886c9f35cc89b, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -2.3987923
+      objectReference: {fileID: 0}
+    - target: {fileID: 699855443471880319, guid: 6833f9d0a3a80f94fb9886c9f35cc89b, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 699855443471880319, guid: 6833f9d0a3a80f94fb9886c9f35cc89b, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 699855443471880319, guid: 6833f9d0a3a80f94fb9886c9f35cc89b, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 699855443471880319, guid: 6833f9d0a3a80f94fb9886c9f35cc89b, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 699855443471880319, guid: 6833f9d0a3a80f94fb9886c9f35cc89b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 699855443471880319, guid: 6833f9d0a3a80f94fb9886c9f35cc89b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 699855443471880319, guid: 6833f9d0a3a80f94fb9886c9f35cc89b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6132705328580221110, guid: 6833f9d0a3a80f94fb9886c9f35cc89b, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 679.2987
+      objectReference: {fileID: 0}
+    - target: {fileID: 6132705328580221110, guid: 6833f9d0a3a80f94fb9886c9f35cc89b, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 827.65326
+      objectReference: {fileID: 0}
+    - target: {fileID: 6132705328580221110, guid: 6833f9d0a3a80f94fb9886c9f35cc89b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -6.951441
+      objectReference: {fileID: 0}
+    - target: {fileID: 6132705328580221110, guid: 6833f9d0a3a80f94fb9886c9f35cc89b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.31884527
+      objectReference: {fileID: 0}
+    - target: {fileID: 6132705328580221110, guid: 6833f9d0a3a80f94fb9886c9f35cc89b, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -29.98473
+      objectReference: {fileID: 0}
+    - target: {fileID: 6132705328580221110, guid: 6833f9d0a3a80f94fb9886c9f35cc89b, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.01851291
+      objectReference: {fileID: 0}
+    - target: {fileID: 6132705328580221110, guid: 6833f9d0a3a80f94fb9886c9f35cc89b, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.018512813
+      objectReference: {fileID: 0}
+    - target: {fileID: 6132705328580221110, guid: 6833f9d0a3a80f94fb9886c9f35cc89b, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.7068645
+      objectReference: {fileID: 0}
+    - target: {fileID: 6132705328580221110, guid: 6833f9d0a3a80f94fb9886c9f35cc89b, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.7068644
+      objectReference: {fileID: 0}
+    - target: {fileID: 6132705328580221110, guid: 6833f9d0a3a80f94fb9886c9f35cc89b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 6132705328580221110, guid: 6833f9d0a3a80f94fb9886c9f35cc89b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 177
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 6833f9d0a3a80f94fb9886c9f35cc89b, type: 3}
+--- !u!4 &1720032421 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 699855443471880319, guid: 6833f9d0a3a80f94fb9886c9f35cc89b, type: 3}
+  m_PrefabInstance: {fileID: 1720032420}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1736215891 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: b9b3fb18e61382c4ba91a4d6b59c1c25, type: 3}
@@ -18628,7 +18814,7 @@ AudioSource:
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 101
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
@@ -19063,7 +19249,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -128.82715, y: 5.6249695}
+  m_AnchoredPosition: {x: -18.827148, y: 5.6249695}
   m_SizeDelta: {x: 36.5, y: 61.25}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1913848572
@@ -19707,7 +19893,7 @@ AudioSource:
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 101
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
@@ -20013,7 +20199,7 @@ AudioSource:
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 101
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
@@ -20304,6 +20490,7 @@ SceneRoots:
   - {fileID: 439122}
   - {fileID: 1393918448}
   - {fileID: 434689539}
+  - {fileID: 950029096}
   - {fileID: 1074570216}
   - {fileID: 1755537185}
   - {fileID: 20164889}
