@@ -1,9 +1,5 @@
 using UnityEngine;
 
-
-// Sitzt auf jeder einzelnen Flasche in der Szene.
-// Kennt keine Spiellogik selbst - meldet nur "ich wurde getroffen" an das BottleShootingGame.
-
 public class Bottle : MonoBehaviour
 {
     [Header("Effekte (optional)")]
@@ -28,24 +24,20 @@ public class Bottle : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
     }
     
-    // Wird von ShootingInput aufgerufen, wenn der Spieler diese Flasche trifft.
+ 
     
     public void Hit()
     {
-        // Verhindert, dass eine bereits getroffene Flasche nochmal zählt
-        // (z.B. falls der Klick-Raycast aus Versehen zweimal denselben Frame trifft)
+     
         if (alreadyHit) return;
         alreadyHit = true;
 
         PlayHitEffects();
         SpawnShatterEffect();
-
-        // Der eigentliche Spielfortschritt läuft über BottleShootingGame,
-        // nicht über die einzelne Flasche - deshalb hier die zentrale Instanz informieren.
+        
         BottleShootingGame.Instance.OnBottleHit(this);
 
-        // Flasche optisch verschwinden lassen (statt zerstören,
-        // damit sie beim naechsten Rundenstart wieder aktiviert werden kann)
+       
         gameObject.SetActive(false);
     }
 
@@ -56,9 +48,10 @@ public class Bottle : MonoBehaviour
             Instantiate(hitEffectPrefab, transform.position, Quaternion.identity);
         }
 
-        if (hitSound != null && audioSource != null)
+        if (hitSound != null)
         {
-            audioSource.PlayOneShot(hitSound);
+            
+            AudioSource.PlayClipAtPoint(hitSound, transform.position);
         }
     }
 
@@ -72,18 +65,17 @@ public class Bottle : MonoBehaviour
             shard.transform.position = transform.position;
             shard.transform.localScale = Vector3.one * Random.Range(0.05f, 0.12f);
 
-            // Farbe setzen (eigenes Material-Instance, damit nicht alle Shards dasselbe teilen)
+          
             Renderer shardRenderer = shard.GetComponent<Renderer>();
             shardRenderer.material.color = shardColor;
 
-            // Kein eigener Collider-Aerger mit anderen Flaschen/Spieler noetig -
-            // der Standard Box Collider von CreatePrimitive reicht fuer die kurze Lebensdauer.
+            
             Rigidbody shardRb = shard.AddComponent<Rigidbody>();
             Vector3 explosionDirection = Random.onUnitSphere + Vector3.up; // leicht nach oben bevorzugt
             shardRb.AddForce(explosionDirection.normalized * Random.Range(2f, 5f), ForceMode.Impulse);
             shardRb.AddTorque(Random.insideUnitSphere * 5f, ForceMode.Impulse);
 
-            // Bruchstuecke nach kurzer Zeit wieder entfernen, damit die Szene nicht vollmuellt
+    
             Destroy(shard, 2f);
         }
     }
