@@ -25,10 +25,7 @@ public class MinigameSceneLoader : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
-    /// <summary>
-    /// Wird von einer Station im Saloon aufgerufen (z.B. MinigameStation.cs),
-    /// wenn der Spieler mit E ein Minispiel startet.
-    /// </summary>
+   
     public void LoadMinigame(string sceneName)
     {
         if (!string.IsNullOrEmpty(currentMinigameScene))
@@ -42,10 +39,7 @@ public class MinigameSceneLoader : MonoBehaviour
         SceneManager.LoadScene(sceneName, LoadSceneMode.Additive);
     }
 
-    /// <summary>
-    /// Wird vom jeweiligen Minispiel selbst aufgerufen (z.B. am Ende von
-    /// BottleShootingGame.EndGame()), wenn die Runde vorbei ist.
-    /// </summary>
+    
     public void FinishCurrentMinigame(bool won)
     {
         if (string.IsNullOrEmpty(currentMinigameScene))
@@ -77,14 +71,11 @@ public class MinigameSceneLoader : MonoBehaviour
                 : null;
         }
 
-        // Spielerbewegung und -interaktion waehrend des Minispiels abschalten,
-        // damit er sich nicht gleichzeitig im Saloon weiterbewegen kann.
+  
         if (playerController != null) playerController.enabled = false;
         if (playerInteraction != null) playerInteraction.enabled = false;
 
-        // Kamera + AudioListener des Spielers deaktivieren, damit die eigene
-        // Kamera der Minispiel-Szene die Bildausgabe uebernimmt (sonst gibt
-        // es Unity-Warnungen wegen mehrerer aktiver AudioListener).
+    
         if (playerCamera != null)
         {
             playerCamera.enabled = false;
