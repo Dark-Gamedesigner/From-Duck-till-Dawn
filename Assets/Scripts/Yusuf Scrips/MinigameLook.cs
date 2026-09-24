@@ -48,17 +48,12 @@ public class MinigameLook : MonoBehaviour
         transform.localRotation = Quaternion.Euler(verticalRotation, horizontalRotation, 0f);
     }
 
-    /// <summary>
-    /// Sperrt die Kamerasteuerung, z.B. wenn ein Panel angezeigt wird.
-    /// </summary>
+   
     public void DisableLook()
     {
         lookEnabled = false;
     }
 
-    /// <summary>
-    /// Gibt die Kamerasteuerung wieder frei.
-    /// </summary>
     public void EnableLook()
     {
         lookEnabled = true;

@@ -27,9 +27,7 @@ public class ShootingInput : MonoBehaviour
     private bool shootingEnabled = false;
     private int currentAmmo;
 
-    /// <summary>
-    /// Aktuell verbleibende Schuesse - kann von der UI ausgelesen werden.
-    /// </summary>
+    
     public int CurrentAmmo => currentAmmo;
     public int MaxAmmo => maxAmmo;
 
@@ -101,10 +99,7 @@ public class ShootingInput : MonoBehaviour
         }
     }
 
-    /// <summary>
-    /// Wird von BottleShootingGame beim Rundenstart aufgerufen.
-    /// Setzt die Munition auf den vollen Wert zurueck.
-    /// </summary>
+    
     public void EnableShooting()
     {
         shootingEnabled = true;

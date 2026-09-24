@@ -4,9 +4,7 @@ using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 using TMPro;
 
-/// <summary>
-/// Zentrale Logik fuer das Minispiel "Flaschenabschiessen".
-/// </summary>
+
 public class BottleShootingGame : MonoBehaviour
 {
     public static BottleShootingGame Instance { get; private set; }
@@ -200,9 +198,7 @@ public class BottleShootingGame : MonoBehaviour
         }
     }
 
-    /// <summary>
-    /// An den "Nochmal versuchen"-Button im GAME-OVER-Panel haengen.
-    /// </summary>
+    
     public void RetryFromGameOver()
     {
         if (gameOverPanel != null)
@@ -213,9 +209,7 @@ public class BottleShootingGame : MonoBehaviour
         StartGame();
     }
 
-    /// <summary>
-    /// An den "Zurueck zum Saloon"-Button im GAME-OVER-Panel haengen.
-    /// </summary>
+    
     public void BackToSaloonFromGameOver()
     {
         if (gameOverPanel != null)
@@ -226,9 +220,7 @@ public class BottleShootingGame : MonoBehaviour
         ReturnToSaloon();
     }
 
-    /// <summary>
-    /// An den "Zurueck zum Saloon"-Button im WIN-Panel haengen.
-    /// </summary>
+    
     public void BackToSaloonFromWin()
     {
         if (winPanel != null)
@@ -239,9 +231,7 @@ public class BottleShootingGame : MonoBehaviour
         ReturnToSaloon();
     }
 
-    /// <summary>
-    /// Laedt die Saloon-Szene komplett neu (kein additives System mehr).
-    /// </summary>
+   
     private void ReturnToSaloon()
     {
         Cursor.lockState = CursorLockMode.None;
