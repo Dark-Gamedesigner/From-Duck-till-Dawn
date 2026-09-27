@@ -17022,7 +17022,7 @@ MonoBehaviour:
   scoreText: {fileID: 283600061}
   winPanel: {fileID: 583007731}
   gameOverPanel: {fileID: 2027884269}
-  autoStartForTesting: 1
+  autoStartForTesting: 0
 --- !u!4 &1393918448
 Transform:
   m_ObjectHideFlags: 0
